@@ -1,0 +1,73 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<style>
+
+.video-container{
+            display: flex;
+            flex-direction: column;
+			      align-items: center;
+
+}
+
+video{
+    width: 90vw;
+    height: 90vh;
+	}
+	
+	.img-ugly{
+	
+	}
+	img{
+	position: absolute;
+    top: 31%;
+    left: 50%;
+	display:none
+	}
+</style>
+<script>
+function myFunction() {
+	setInterval(()=>{show()},5000)
+}
+function show() {
+  var ele=document.querySelector('.img-beuty')
+  ele.style.display = "block";
+  setTimeout(()=> ele.style.display = "none",1.3333)
+
+}
+document.addEventListener('keydown', logKey);
+
+function logKey(e) {
+  console.log(e.code);
+  var ele=document.querySelector('.nothing')
+
+  if (e.code==='KeyN'){
+	var ele=document.querySelector('.img-ugly')
+  }
+  if (e.code==='KeyH'){
+	var ele=document.querySelector('.img-beuty')
+  }
+   ele.style.display = "block";
+   
+	setTimeout(()=> ele.style.display = "none",0.1)
+
+}
+
+</script
+</head>
+<body onload="myFunction()" > 
+
+<div class="video-container">
+    <video autoplay loop class="hero-video" controls controlsList="nofullscreen nodownload">
+        <source id="mp4" src="./vid.mp4" type="video/mp4">Your browser does not support the video tag.</video>
+    <div class="hero-caption">
+        <img class="img-ugly" src='./ugly.png'/>
+		<img class="img-beuty" src='./beuty.png'/>
+		<div class='nothing'/>
+    </div>
+</div>
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeYpq4ikFXHVqlVx9GdHyFJiZRLq2XW47TWUWbGePpy9Y6jcw/viewform?embedded=true" width="640" height="524" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+</body> 
+</html>
